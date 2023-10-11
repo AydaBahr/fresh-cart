@@ -1,5 +1,5 @@
 import React from 'react'
-import { createBrowserRouter, RouterProvider} from 'react-router-dom'
+import { createBrowserRouter, createHashRouter, RouterProvider} from 'react-router-dom'
 import LayOut from './Components/LayOut/LayOut'
 import Brands from './Components/Brands/Brands'
 import Cart from './pages/Cart/Cart'
@@ -24,7 +24,7 @@ import CategoryDetails from './pages/CategoryDetails/CategoryDetails'
 import { Provider } from 'react-redux'
 import { store } from './Redux/Store/Store'
 
-let routes= createBrowserRouter([
+let routes= createHashRouter([
 {path:'',element:<LayOut/>, children:[
   {index:'true' , element:<ProtectedRoute><HomePage/></ProtectedRoute>},
   {path:'brands' , element:<ProtectedRoute><Brands/></ProtectedRoute>},
